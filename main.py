@@ -221,11 +221,10 @@ def main():
         tbs = get_tbs(i)
         favorites = get_favorite(i)
         for j in favorites:
-            print(j)
             time.sleep(random.randint(1,5))
-            client_sign(i, tbs, j.get("id"), i.get("name"))
+            client_sign(i, tbs, j["id"], j["name"])
         logger.info("完成第" + str(n) + "个用户签到")
-    #send_email(favorites)
+    send_email(favorites)
     logger.info("所有用户签到结束")
 
 
